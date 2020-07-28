@@ -10,7 +10,7 @@ echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 # Override from environment
 
 AOSP_IMAGE=${AOSP_IMAGE:-kylemanna/aosp}
-AOSP_ARGS=${AOSP_ARGS:---rm }
+AOSP_ARGS=${AOSP_ARGS:---rm --tty}
 
 AOSP_VOL=${AOSP_VOL:-~/aosp-root}
 AOSP_VOL=${AOSP_VOL%/} # Trim trailing slash if needed
@@ -50,6 +50,6 @@ fi
 
 echo ""
 echo "#####################################"
-docker run -d $AOSP_ARGS $AOSP_HOST_ID_ARGS $SSH_AUTH_ARGS $AOSP_EXTRA_ARGS \
+docker run  $AOSP_ARGS $AOSP_HOST_ID_ARGS $SSH_AUTH_ARGS $AOSP_EXTRA_ARGS \
     -v "$AOSP_VOL_AOSP:/aosp" -v "$AOSP_VOL_CCACHE:/tmp/ccache" \
     $AOSP_IMAGE $@
