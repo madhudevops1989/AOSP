@@ -6,7 +6,7 @@
 #
 
 set -e
-
+echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 # Override from environment
 
 AOSP_IMAGE=${AOSP_IMAGE:-kylemanna/aosp}
@@ -38,7 +38,7 @@ aosp_create_dir_if_needed $AOSP_VOL_AOSP
 aosp_create_dir_if_needed $AOSP_VOL_CCACHE
 
 uid=$(id -u)
-
+echo "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"
 # Set uid and gid to match host current user as long as NOT root
 if [ $uid -ne "0" ]; then
     AOSP_HOST_ID_ARGS="-e USER_ID=$uid -e GROUP_ID=$(id -g)"
