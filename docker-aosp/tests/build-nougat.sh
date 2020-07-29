@@ -46,8 +46,8 @@ else
     else
         if [ -n "$(type -P curl)" ]; then
             bash <(curl -s $aosp_url) $args
-        elif [ -n "$(type -P curl)" ]; then
-            bash <(curl -q $aosp_url -O -) $args
+        elif [ -n "$(type -P wget)" ]; then
+            bash <(wget -q $aosp_url -O -) $args
         else
             echo "Unable to run the aosp binary"
         fi
