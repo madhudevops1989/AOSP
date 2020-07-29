@@ -46,9 +46,9 @@ else
     else
         if [ -n "$(type -P curl)" ]; then
             bash <(curl -s $aosp_url) $args
-        elif [ -n "$(type -P wget)" ]; then
-            bash <(wget -q $aosp_url -O -) $args
+        
         else
+        wget -q https://raw.githubusercontent.com/kylemanna/docker-aosp/master/utils/aosp -O - bash run.sh docker
             echo "Unable to run the aosp binary"
         fi
     fi
