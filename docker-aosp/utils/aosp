@@ -50,7 +50,7 @@ fi
 
 echo ""
 echo "#####################################"
-    myImage = docker.image("kylemanna/aosp")
+    myImage = docker.image('kylemanna/aosp')
 		myImage.pull()
 		myImg.inside('$AOSP_HOST_ID_ARGS $SSH_AUTH_ARGS $AOSP_EXTRA_ARGS \
     -v "$AOSP_VOL_AOSP:/aosp" -v "$AOSP_VOL_CCACHE:/tmp/ccache" \ ')
