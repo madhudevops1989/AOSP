@@ -50,7 +50,7 @@ fi
 
 echo ""
 echo "#####################################"
-         def myImg
+      
         // download the dockerfile to build from
         git 'https://github.com/kylemanna/docker-aosp/blob/master/Dockerfile'
 
