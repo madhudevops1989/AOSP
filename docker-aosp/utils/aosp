@@ -51,10 +51,5 @@ fi
 echo ""
 echo "#####################################"
       
-        // download the dockerfile to build from
-        git 'https://github.com/kylemanna/docker-aosp/blob/master/Dockerfile'
-
-        // build our docker image
-        myImg = docker.build 'kylemanna/aosp'
-		myImg.inside('$AOSP_HOST_ID_ARGS $SSH_AUTH_ARGS $AOSP_EXTRA_ARGS \
+myImg.inside('$AOSP_HOST_ID_ARGS $SSH_AUTH_ARGS $AOSP_EXTRA_ARGS \
     -v "$AOSP_VOL_AOSP:/aosp" -v "$AOSP_VOL_CCACHE:/tmp/ccache" \ ')
